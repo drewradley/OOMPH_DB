@@ -1,0 +1,101 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+        <% if (proctors.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <!-- <th scope="col">Image</th> -->
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Student Email</th>
+                        <th scope="col">studentAccommodations</th>
+                        <th scope="col">StudentCourse1</th>
+                        <th scope="col">StudentCourse2</th>
+                        <th scope="col">Proctor1fullname</th>
+                        <th scope="col">Proctor1institution</th>
+                        <th scope="col">Proctor1email</th>
+                        <th scope="col">Proctor1phone</th>
+                        <th scope="col">Proctor1Relationship</th>
+
+                        <th scope="col">Action</th>
+                    </tr>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Proctor2fullname</th>
+                        <th scope="col">Proctor2institution</th>
+                        <th scope="col">Proctor2email</th>
+                        <th scope="col">Proctor2phone</th>
+                        <th scope="col" >Proctor2Relationship</th>
+
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% proctors.forEach((proctor, index) => { %>
+                        <tr>
+                            <th scope="row"><%= proctor.id %></th>
+                            <td><%= proctor.studentName %></td>
+                            <td><%= proctor.studentEmail %></td>
+                            <td><%= proctor.studentAccommodations %></td>
+                            <td><%= proctor.StudentCourse1 %></td>
+                            <td><%= proctor.StudentCourse2 %></td>
+                            <td><%= proctor.Proctor1fullname %></td>
+                            <td><%= proctor.Proctor1institution %></td>
+                            <td><%= proctor.Proctor1email %></td>
+                            <td><%= proctor.Proctor1phone %></td>
+                            <td ><%= proctor.Proctor1Relationship %></td>
+
+                            <td>
+                                <a href="/edit/<%= proctor.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <button class="btn btn-sm btn-danger" onclick="myFunction()">Delete</button>
+                                <p id="demo"></p>
+
+                                <script>
+                                function myFunction() {
+                                var txt;
+                                var r = confirm("Are you sure you want to delete?");
+                                if (r == true) {
+                                    document.location = "/delete/<%= proctor.id %>"
+                                    //txt = "You pressed OK!";
+                                } else {
+                                    //txt = "You pressed Cancel!";
+                                }
+                                //document.getElementById("demo").innerHTML = txt;
+                                }
+                                </script>
+                                <!-- <a href="/delete/<%= proctor.id %>" class="btn btn-sm btn-danger">Delete</a> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="border-bottom: 3px solid black" scope="row"><%=  %>
+                            </th>
+                            <td style="border-bottom: 3px solid black"><%=  %></tdstyle="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2fullname %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2institution %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2email %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2phone %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2Relationship %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+
+
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table><hr>
+        <% } else { %>
+            <p class="text-center">No proctors found. Go <a href="/add" >here</a> to add proctors.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

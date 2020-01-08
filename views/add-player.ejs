@@ -1,0 +1,126 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div >
+                <div class="form-group">
+                    <label for="exampleInputSFN">Student Name (last, first)</label>
+                    <input type="text" class="form-control" name="SFN_input" id="SFN-input" placeholder="Student Name (last, first)">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputSE">Student Email address</label>
+                    <input type="email" class="form-control" name="SE_input" id="SE-input" placeholder="Student Email address">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputSA">Student Accommodations</label>
+                    <input type="text" class="form-control" name="SA_input" id="SA-input" placeholder="Student Accommodations">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputSCC">Student Course 1</label>
+                    <input type="text" class="form-control" name="SCC1_input" id="SCC1-input" placeholder="Student Course 1">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputSCC">Student Course 2</label>
+                    <input type="text" class="form-control" name="SCC2_input" id="SCC2-input" placeholder="Student Course 2">
+                  </div>
+                  <h4>Proctor Information</h4>
+            <div class="form-group">
+            <label for="exampleInputProctorName1">Proctor 1 full name</label>
+                <input type="text" class="form-control" name="PN1_input" id="PN1-input" placeholder="Proctor1 full name">
+              </div> 
+
+          <div class="form-group">
+            <label for="exampleInputPI">Proctor 1 institution</label>
+                <input type="text" class="form-control" name="PI1_input" id="PI1-input" placeholder="Proctor institution">
+              </div> 
+              
+          <div class="form-group">
+            <label for="exampleInputProctorEmail">Proctor 1 institution email address</label>
+                <input type="email" class="form-control" name="PE1_input" id="PE1-input" placeholder="Proctor1 institution email address">
+              </div> 
+
+          <div class="form-group">
+            <label for="exampleInputProctorPhone">Proctor 1 institution phone number</label>
+                <input type="text" class="form-control" name="PP1_input" id="PP1-input" placeholder="Proctor1 institution phone number">
+              </div> 
+              <div class="form-group">
+                  <label for="exampleInputProctorRelationship">Proctor 1 Relationship: </label>
+              <select name="PP1_type" id="PP1-type" >
+                <option value="Professional proctor">Professional proctor</option>
+                <option value="Educator">Educator</option>
+                <option value="Librarian">Librarian</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Human Resources Manager">Human Resources Manager</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputProctorName">Proctor 2 full name</label>
+                    <input type="text" class="form-control" name="PN2_input" id="PN2-input" placeholder="Proctor2 full name">
+                  </div> 
+    
+              <div class="form-group">
+                <label for="exampleInputPI">Proctor 2 institution</label>
+                    <input type="text" class="form-control" name="PI2_input" id="PI2-input" placeholder="Proctor2 institution">
+                  </div> 
+                  
+              <div class="form-group">
+                <label for="exampleInputProctorEmail">Proctor  2 institution email address</label>
+                    <input type="email" class="form-control" name="PE2_input" id="PE2-input" placeholder="Proctor2 institution email address">
+                  </div> 
+    
+              <div class="form-group">
+                <label for="exampleInputProctorPhone">Proctor 2 institution phone number</label>
+                    <input type="text" class="form-control" name="PP2_input" id="PP2-input" placeholder="Proctor2 institution phone number">
+                  </div> 
+                  <div class="form-group">
+                      <label for="exampleInputProctorRelationship">Proctor 2 Relationship: </label>
+                  <select name="PP2_type" id="PP2-type" >
+                    <option value="Professional proctor">Professional proctor</option>
+                    <option value="Educator">Educator</option>
+                    <option value="Librarian">Librarian</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Human Resources Manager">Human Resources Manager</option>
+                  </select>
+                </div>
+                <!-- <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Number" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected disabled>Choose position</option>
+                        <option>Goalkeeper</option>
+                        <option>Centre Back</option>
+                        <option>Right Back</option>
+                        <option>Left Back</option>
+                        <option>Defensive Midfielder</option>
+                        <option>Central Midfielder</option>
+                        <option>Attacking Midfielder</option>
+                        <option>Right Wing Forward</option>
+                        <option>Left Wing Forward</option>
+                        <option>Striker</option>
+                    </select>
+                </div> -->
+                <!-- <div class="col-md-12">
+                    <label for="player-img"><b>Player Image</b></label><br>
+                    <input type="file" name="image" id="player-img" class="" required>
+                </div> -->
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Update</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
