@@ -8,13 +8,14 @@ const app = express();
 const {getHomePage} = require('./routes/index');
 const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage} = require('./routes/player');
 const port = 2000;
+require('dotenv').config({ path: '.env.local' });
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 const db = mysql.createConnection ({
     host: "OOMPHproctors.db.5391918.389.hostedresource.net",
   user: "OOMPHproctors",
-  password: "Fishsticks13!#",
+  password: process.env.MYSQL_PW,
   database: "OOMPHproctors",
 });
 
