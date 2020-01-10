@@ -7,7 +7,190 @@
     <% if (proctor) { %>
         <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
             <div >
-                <div class="form-group col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputSFN">Student Name (last, first)</label>
+                    <input type="text" class="form-control" name="SFN_input" id="SFN-input" value="<%= proctor.studentName %>">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputSE">Student Email address</label>
+                    <input type="email" class="form-control" name="SE_input" id="SE-input" value="<%= proctor.studentEmail %>">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputSA">Student Accommodations</label>
+                    <input type="text" class="form-control" name="SA_input" id="SA-input" value="<%= proctor.studentAccommodations %>">
+                  </div>
+                  <div class="form-group">
+                    <label for="Course1">Course 1: </label>
+                <select name="SCC1_input" id="course1" >
+                  <option value="<%= proctor.StudentCourse1 %>"><%= proctor.StudentCourse1 %></option>
+                  <option value="PHW200E">PHW200E: Health Policy and Management
+                    <option value="PHW200F">PHW200F: Intro to Environmental Health Science</option>
+                    <option value="PHW200G">PHW200G: Health and Social Behavior</option>
+                    <option value="PHW142">PHW142: Introduction to Probability and Statistics</option>
+                    
+                    <option value="PHW250">PHW250: Epidemiologic Methods</option>
+                    
+                    <option value="PHW289">PHW289: Interdisciplinary Seminar</option>
+                    
+                    <option value="PHW227A">PHW227A: Healthcare Finance</option>
+                    <option value="PHW224">PHW224: Organizational Behavior and Management in Health Care</option>
+                    
+                    <option value="PHW220">PHW220: Advanced Health Policy</option>
+                    <option value="PHW226A">PHW226A: Health Economics</option>
+                    
+                    
+                    <option value="PHW226C">PHW226C: Economics of Population Health</option>
+                    <option value="PHW223">PHW223: Strategic Management</option>
+                    
+                    <option value="PHW226F">PHW226F: Cost-Effectiveness Analysis</option>
+                    <option value="PHW209">PHW209: Comparative Health Systems</option>
+               
+                    <option value="PHW212">PHW212: Foundations of Global Health </option>
+                    
+                    <option value="PHW213">PHW213: Global Health Ethics</option>
+                
+                    <option value="PHW250F">PHW250F: Epidemiologic Methods 2, Part 1</option>
+                    <option value="PHW250G">PHW250G: Epidemiologic Methods 2, Part 2</option>
+                    
+                    <option value="PHW236A">PHW236A: Regulatory Science, Drug Development, and Public Health</option>
+                    <option value="PHW253">PHW253: Outbreak Investigations</option>
+                    <option value="PHW257">PHW257: Public Health Preparedness and Emergency Response</option>
+                    
+                    <option value="PHW260">PHW260: Infectious Diseases</option> 
+                    
+                    <option value="PHW272A">PHW272A: Intro to GIS for Public Health</option>
+                    <option value="PHW272B">PHW272B: GIS for Public Health Practice</option>
+                    <option value="PHW272C">PHW272C: Applied Spatial Data Science for Public Health</option>
+                    <option value="PHW218">PHW218: Evaluation of Health & Social Programs</option>
+                    <option value="PHW219">PHW219: Social and Behavioral Health Research: Introduction to </option>
+                    <option value="PHW204">PHW204: Mass Communication in Public Health</option>
+                    <option value="PHW206">PHW206: Maternal and Child Health Nutrition</option>
+                    <option value="PHW205">PHW205: Program Planning</option>
+   
+                </select>
+              </div>
+                  <!-- <div class="form-group">
+                    <label for="exampleInputSCC">Student Course 1</label>
+                    <input type="text" class="form-control" name="SCC1_input" id="SCC1-input" placeholder="Student Course 1">
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="Course1">Course 1: </label>
+                <select name="SCC2_input" id="course1" >
+                    <option value="<%= proctor.StudentCourse2 %>"><%= proctor.StudentCourse2 %></option>
+                    <option value="PHW200E">PHW200E: Health Policy and Management
+                    <option value="PHW200F">PHW200F: Intro to Environmental Health Science</option>
+                    <option value="PHW200G">PHW200G: Health and Social Behavior</option>
+                    <option value="PHW142">PHW142: Introduction to Probability and Statistics</option>
+                    
+                    <option value="PHW250">PHW250: Epidemiologic Methods</option>
+                    
+                    <option value="PHW289">PHW289: Interdisciplinary Seminar</option>
+                    
+                    <option value="PHW227A">PHW227A: Healthcare Finance</option>
+                    <option value="PHW224">PHW224: Organizational Behavior and Management in Health Care</option>
+                    
+                    <option value="PHW220">PHW220: Advanced Health Policy</option>
+                    <option value="PHW226A">PHW226A: Health Economics</option>
+                    
+                    
+                    <option value="PHW226C">PHW226C: Economics of Population Health</option>
+                    <option value="PHW223">PHW223: Strategic Management</option>
+                    
+                    <option value="PHW226F">PHW226F: Cost-Effectiveness Analysis</option>
+                    <option value="PHW209">PHW209: Comparative Health Systems</option>
+               
+                    <option value="PHW212">PHW212: Foundations of Global Health </option>
+                    
+                    <option value="PHW213">PHW213: Global Health Ethics</option>
+                
+                    <option value="PHW250F">PHW250F: Epidemiologic Methods 2, Part 1</option>
+                    <option value="PHW250G">PHW250G: Epidemiologic Methods 2, Part 2</option>
+                    
+                    <option value="PHW236A">PHW236A: Regulatory Science, Drug Development, and Public Health</option>
+                    <option value="PHW253">PHW253: Outbreak Investigations</option>
+                    <option value="PHW257">PHW257: Public Health Preparedness and Emergency Response</option>
+                    
+                    <option value="PHW260">PHW260: Infectious Diseases</option> 
+                    
+                    <option value="PHW272A">PHW272A: Intro to GIS for Public Health</option>
+                    <option value="PHW272B">PHW272B: GIS for Public Health Practice</option>
+                    <option value="PHW272C">PHW272C: Applied Spatial Data Science for Public Health</option>
+                    <option value="PHW218">PHW218: Evaluation of Health & Social Programs</option>
+                    <option value="PHW219">PHW219: Social and Behavioral Health Research: Introduction to </option>
+                    <option value="PHW204">PHW204: Mass Communication in Public Health</option>
+                    <option value="PHW206">PHW206: Maternal and Child Health Nutrition</option>
+                    <option value="PHW205">PHW205: Program Planning</option>
+   
+                </select>
+              </div>
+                  <!-- <div class="form-group">
+                    <label for="exampleInputSCC">Student Course 2</label>
+                    <input type="text" class="form-control" name="SCC2_input" id="SCC2-input" placeholder="Student Course 2">
+                  </div> -->
+                  <h4>Proctor Information</h4>
+            <div class="form-group">
+            <label for="exampleInputProctorName1">Proctor 1 full name</label>
+                <input type="text" class="form-control" name="PN1_input" id="PN1-input" value="<%= proctor.Proctor1fullname %>">
+              </div> 
+
+          <div class="form-group">
+            <label for="exampleInputPI">Proctor 1 institution</label>
+                <input type="text" class="form-control" name="PI1_input" id="PI1-input" value="<%= proctor.Proctor1institution %>">
+              </div> 
+              
+          <div class="form-group">
+            <label for="exampleInputProctorEmail">Proctor 1 institution email address</label>
+                <input type="email" class="form-control" name="PE1_input" id="PE1-input" value="<%= proctor.Proctor1email %>">
+              </div> 
+
+          <div class="form-group">
+            <label for="exampleInputProctorPhone">Proctor 1 institution phone number</label>
+                <input type="text" class="form-control" name="PP1_input" id="PP1-input" value="<%= proctor.Proctor1phone %>">
+              </div> 
+              <div class="form-group">
+                  <label for="exampleInputProctorRelationship">Proctor 1 Relationship: </label>
+              <select name="PP1_type" id="PP1-type" >
+                <option selected value="<%= proctor.Proctor1Relationship %><"><%= proctor.Proctor1Relationship %></option>
+                <option value="Professional proctor">Professional proctor</option>
+                <option value="Educator">Educator</option>
+                <option value="Librarian">Librarian</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Human Resources Manager">Human Resources Manager</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputProctorName">Proctor 2 full name</label>
+                    <input type="text" class="form-control" name="PN2_input" id="PN2-input" value="<%= proctor.Proctor2fullname %>">
+                  </div> 
+    
+              <div class="form-group">
+                <label for="exampleInputPI">Proctor 2 institution</label>
+                    <input type="text" class="form-control" name="PI2_input" id="PI2-input" value="<%= proctor.Proctor2institution %>">
+                  </div> 
+                  
+              <div class="form-group">
+                <label for="exampleInputProctorEmail">Proctor  2 institution email address</label>
+                    <input type="email" class="form-control" name="PE2_input" id="PE2-input" value="<%= proctor.Proctor2email %>">
+                  </div> 
+    
+              <div class="form-group">
+                <label for="exampleInputProctorPhone">Proctor 2 institution phone number</label>
+                    <input type="text" class="form-control" name="PP2_input" id="PP2-input" value="<%= proctor.Proctor2phone %>">
+                  </div> 
+                  <div class="form-group">
+                      <label for="exampleInputProctorRelationship">Proctor 2 Relationship: </label>
+                  <select name="PP2_type" id="PP2-type" >
+                    <option selected value="<%= proctor.Proctor2Relationship %><"><%= proctor.Proctor2Relationship %></option>
+
+                    <option value="Professional proctor">Professional proctor</option>
+                    <option value="Educator">Educator</option>
+                    <option value="Librarian">Librarian</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Human Resources Manager">Human Resources Manager</option>
+                  </select>
+                </div>
+                <!-- <div class="form-group col-md-4">
                     <label for="first-name">Student Name</label>
                     <input type="text" class="form-control" name="first_name" id="first-name" value="<%= proctor.studentName %>" required>
                 </div>
@@ -18,12 +201,12 @@
                 <div class="form-group col-md-4">
                     <label for="last-name">Last Name</label>
                     <input type="text" class="form-control" name="last_name" id="last-name" value="<%= proctor.studentAccommodations %>" required>
-                </div>
+                </div> -->
                 <!-- <div class="form-group col-md-4">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" id="username" value="<%= proctor.user_name %>" required disabled title="Username can't be changed">
                 </div> -->
-            </div>
+            <!-- </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="number">Number</label>
@@ -44,7 +227,7 @@
                         <option>Left Wing Forward</option>
                         <option>Striker</option>
                     </select>
-                </div>
+                </div> -->
             </div>
             <button type="submit" class="btn btn-success float-right">Update proctor</button>
         </form>
