@@ -1,0 +1,199 @@
+<% include partials/header.ejs %>
+
+    <div class="table-wrapper">
+        <% if (proctors.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <!-- <th scope="col">ID</th> -->
+                        <!-- <th scope="col">Image</th> -->
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Student Email</th>
+                        <th scope="col">studentAccommodations</th>
+                        <th scope="col">StudentCourse1</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Proctor1fullname</th>
+                        <th scope="col">Proctor1institution</th>
+                        <th scope="col">Proctor1email</th>
+                        <th scope="col">Proctor1phone</th>
+                        <th scope="col">Proctor1Relationship</th>
+
+                        <!--  <th scope="col">Action</th> --> 
+                    </tr>
+                    <tr>
+                        <!-- <th scope="col"></th> -->
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">StudentCourse2</th>
+                        <th scope="col">Proctor</th>
+                        <th scope="col">Proctor2fullname</th>
+                        <th scope="col">Proctor2institution</th>
+                        <th scope="col">Proctor2email</th>
+                        <th scope="col">Proctor2phone</th>
+                        <th scope="col" >Proctor2Relationship</th>
+
+                        <!-- <th scope="col"></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <% proctors.forEach((proctor, index) => { %>
+                        <tr>
+                            <!-- <th scope="row"><%= proctor.id %></th> -->
+                            <td><%= proctor.studentName %></td>
+                            <td><%= proctor.studentEmail %></td>
+                            <td><%= proctor.studentAccommodations %></td>
+                            <!--  <td><%= proctor.StudentCourse1 %></td> -->
+                            <td>
+                                <div class="form-group">
+                                <select name="SCC1_input" id="course1" >
+                                  <option value="<%= proctor.StudentCourse1 %>"><%= proctor.StudentCourse1 %></option>
+                                  <option value="PHW200E">PHW200E: Health Policy and Management
+                                    <option value="PHW200F">PHW200F: Intro to Environmental Health Science</option>
+                                    <option value="PHW200G">PHW200G: Health and Social Behavior</option>
+                                    <option value="PHW142">PHW142: Introduction to Probability and Statistics</option>
+                                    
+                                    <option value="PHW250">PHW250: Epidemiologic Methods</option>
+                                    
+                                    <option value="PHW289">PHW289: Interdisciplinary Seminar</option>
+                                    
+                                    <option value="PHW227A">PHW227A: Healthcare Finance</option>
+                                    <option value="PHW224">PHW224: Organizational Behavior and Management in Health Care</option>
+                                    
+                                    <option value="PHW220">PHW220: Advanced Health Policy</option>
+                                    <option value="PHW226A">PHW226A: Health Economics</option>
+                                    
+                                    
+                                    <option value="PHW226C">PHW226C: Economics of Population Health</option>
+                                    <option value="PHW223">PHW223: Strategic Management</option>
+                                    
+                                    <option value="PHW226F">PHW226F: Cost-Effectiveness Analysis</option>
+                                    <option value="PHW209">PHW209: Comparative Health Systems</option>
+                               
+                                    <option value="PHW212">PHW212: Foundations of Global Health </option>
+                                    
+                                    <option value="PHW213">PHW213: Global Health Ethics</option>
+                                
+                                    <option value="PHW250F">PHW250F: Epidemiologic Methods 2, Part 1</option>
+                                    <option value="PHW250G">PHW250G: Epidemiologic Methods 2, Part 2</option>
+                                    
+                                    <option value="PHW236A">PHW236A: Regulatory Science, Drug Development, and Public Health</option>
+                                    <option value="PHW253">PHW253: Outbreak Investigations</option>
+                                    <option value="PHW257">PHW257: Public Health Preparedness and Emergency Response</option>
+                                    
+                                    <option value="PHW260">PHW260: Infectious Diseases</option> 
+                                    
+                                    <option value="PHW272A">PHW272A: Intro to GIS for Public Health</option>
+                                    <option value="PHW272B">PHW272B: GIS for Public Health Practice</option>
+                                    <option value="PHW272C">PHW272C: Applied Spatial Data Science for Public Health</option>
+                                    <option value="PHW218">PHW218: Evaluation of Health & Social Programs</option>
+                                    <option value="PHW219">PHW219: Social and Behavioral Health Research: Introduction to </option>
+                                    <option value="PHW204">PHW204: Mass Communication in Public Health</option>
+                                    <option value="PHW206">PHW206: Maternal and Child Health Nutrition</option>
+                                    <option value="PHW205">PHW205: Program Planning</option>
+                   
+                                </select>
+                              </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                <select name="SCC1_input" id="course1" >
+                                    <option disabled selected value="<%= proctor.ActiveProctor %>"><%= proctor.ActiveProctor %></option>
+
+                                  <option value="<%= proctor.Proctor1fullname %>"><%= proctor.Proctor1fullname %></option>
+                                  <option value="<%= proctor.Proctor2fullname %>"><%= proctor.Proctor2fullname %></option>
+                                    
+                   
+                                </select>
+                              </div>
+                            </td>
+                            <!-- <td style="text-align: center;"><input type="radio" name="activeProctor" id="1" ></td> -->
+                            <td><%= proctor.Proctor1fullname %></td>
+                            <td><%= proctor.Proctor1institution %></td>
+                            <td><%= proctor.Proctor1email %></td>
+                            <td><%= proctor.Proctor1phone %></td>
+                            <td ><%= proctor.Proctor1Relationship %></td>
+
+                            
+                        <tr>
+                            <!-- <th style="border-bottom: 3px solid black" scope="row"><%=  %>
+                            </th> -->
+                            <td style="border-bottom: 3px solid black"><%=  %></tdstyle="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                                <td  width:15px; style="border-bottom: 3px solid black">
+                                    <div class="form-group">
+                                    <select name="SCC2_input" id="course1" >
+                                        <option value="<%= proctor.StudentCourse2 %>"><%= proctor.StudentCourse2 %></option>
+                                        <option value="PHW200E">PHW200E: Health Policy and Management
+                                        <option value="PHW200F">PHW200F: Intro to Environmental Health Science</option>
+                                        <option value="PHW200G">PHW200G: Health and Social Behavior</option>
+                                        <option value="PHW142">PHW142: Introduction to Probability and Statistics</option>
+                                        
+                                        <option value="PHW250">PHW250: Epidemiologic Methods</option>
+                                        
+                                        <option value="PHW289">PHW289: Interdisciplinary Seminar</option>
+                                        
+                                        <option value="PHW227A">PHW227A: Healthcare Finance</option>
+                                        <option value="PHW224">PHW224: Organizational Behavior and Management in Health Care</option>
+                                        
+                                        <option value="PHW220">PHW220: Advanced Health Policy</option>
+                                        <option value="PHW226A">PHW226A: Health Economics</option>
+                                        
+                                        
+                                        <option value="PHW226C">PHW226C: Economics of Population Health</option>
+                                        <option value="PHW223">PHW223: Strategic Management</option>
+                                        
+                                        <option value="PHW226F">PHW226F: Cost-Effectiveness Analysis</option>
+                                        <option value="PHW209">PHW209: Comparative Health Systems</option>
+                                   
+                                        <option value="PHW212">PHW212: Foundations of Global Health </option>
+                                        
+                                        <option value="PHW213">PHW213: Global Health Ethics</option>
+                                    
+                                        <option value="PHW250F">PHW250F: Epidemiologic Methods 2, Part 1</option>
+                                        <option value="PHW250G">PHW250G: Epidemiologic Methods 2, Part 2</option>
+                                        
+                                        <option value="PHW236A">PHW236A: Regulatory Science, Drug Development, and Public Health</option>
+                                        <option value="PHW253">PHW253: Outbreak Investigations</option>
+                                        <option value="PHW257">PHW257: Public Health Preparedness and Emergency Response</option>
+                                        
+                                        <option value="PHW260">PHW260: Infectious Diseases</option> 
+                                        
+                                        <option value="PHW272A">PHW272A: Intro to GIS for Public Health</option>
+                                        <option value="PHW272B">PHW272B: GIS for Public Health Practice</option>
+                                        <option value="PHW272C">PHW272C: Applied Spatial Data Science for Public Health</option>
+                                        <option value="PHW218">PHW218: Evaluation of Health & Social Programs</option>
+                                        <option value="PHW219">PHW219: Social and Behavioral Health Research: Introduction to </option>
+                                        <option value="PHW204">PHW204: Mass Communication in Public Health</option>
+                                        <option value="PHW206">PHW206: Maternal and Child Health Nutrition</option>
+                                        <option value="PHW205">PHW205: Program Planning</option>
+                       
+                                    </select>
+                                  </div>
+                                </td>
+                            <!-- <td style="border-bottom: 3px solid black"><%= proctor.StudentCourse2 %></tdstyle="text-align: center; border-bottom: 3px solid black"> -->
+                            <!-- <td style="text-align: center; border-bottom: 3px solid black"><input type="radio" name="activeProctor" id="2" ></td> -->
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                                <td style="border-bottom: 3px solid black"><%= proctor.Proctor2fullname %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2institution %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2email %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2phone %></td style="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%= proctor.Proctor2Relationship %></td style="border-bottom: 3px solid black">
+                            <!-- <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black"> -->
+
+
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <hr>
+            
+        <% } else { %>
+            <p class="text-center">No proctors found. Go <a href="/" >home</a> .</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

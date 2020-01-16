@@ -1,4 +1,6 @@
 <% include partials/header.ejs %>
+<a class="btn btn-primary float-right" href="/add" title="Add a New Player">Add Student/proctors</a>
+
     <div class="table-wrapper">
         <% if (proctors.length > 0) {%>
             <table class="table table-hovered">
@@ -11,15 +13,16 @@
                         <th scope="col">studentAccommodations</th>
                         <th scope="col">StudentCourse1</th>
                         <th scope="col">StudentCourse2</th>
+                        <th scope="col">Active Proctor</th>
                         <th scope="col">Proctor1fullname</th>
                         <th scope="col">Proctor1institution</th>
                         <th scope="col">Proctor1email</th>
                         <th scope="col">Proctor1phone</th>
                         <th scope="col">Proctor1Relationship</th>
 
-                        <th scope="col">Action</th>
                     </tr>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
@@ -32,7 +35,6 @@
                         <th scope="col">Proctor2phone</th>
                         <th scope="col" >Proctor2Relationship</th>
 
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +46,7 @@
                             <td><%= proctor.studentAccommodations %></td>
                             <td><%= proctor.StudentCourse1 %></td>
                             <td><%= proctor.StudentCourse2 %></td>
+                            <td><%= proctor.ActiveProctor %></td>
                             <td><%= proctor.Proctor1fullname %></td>
                             <td><%= proctor.Proctor1institution %></td>
                             <td><%= proctor.Proctor1email %></td>
@@ -51,8 +54,6 @@
                             <td ><%= proctor.Proctor1Relationship %></td>
 
                             <td>
-                                <a href="/edit/<%= proctor.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
-                                <button class="btn btn-sm btn-danger" onclick="myFunction()">Delete</button>
                                 <p id="demo"></p>
 
                                 <script>
@@ -74,7 +75,8 @@
                         <tr>
                             <th style="border-bottom: 3px solid black" scope="row"><%=  %>
                             </th>
-                            <td style="border-bottom: 3px solid black"><%=  %></tdstyle="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black "><%=  %></tdstyle="border-bottom: 3px solid black">
+                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
                             <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
                             <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
                             <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
@@ -84,7 +86,9 @@
                             <td style="border-bottom: 3px solid black"><%= proctor.Proctor2email %></td style="border-bottom: 3px solid black">
                             <td style="border-bottom: 3px solid black"><%= proctor.Proctor2phone %></td style="border-bottom: 3px solid black">
                             <td style="border-bottom: 3px solid black"><%= proctor.Proctor2Relationship %></td style="border-bottom: 3px solid black">
-                            <td style="border-bottom: 3px solid black"><%=  %></td style="border-bottom: 3px solid black">
+                                
+                                <a href="/edit/<%= proctor.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <button class="btn btn-sm btn-danger" onclick="myFunction()">Delete</button>
 
 
                             

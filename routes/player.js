@@ -74,7 +74,8 @@ module.exports = {
     editPlayerPage: (req, res) => {
         let playerId = req.params.id;
         let query = "SELECT * FROM `Proctors` WHERE id = '" + playerId + "' ";
-        db.query(query, (err, result) => { console.log(result);
+        db.query(query, (err, result) => { 
+            //console.log(result);
             if (err) {
                 return res.status(500).send(err);
             }
@@ -101,7 +102,7 @@ module.exports = {
         var Proctor2email=req.body.PE2_input;
         var Proctor2phone=req.body.PP2_input;
         var Proctor2Relationship=req.body.PP2_type;
-
+        var ActiveProctor = req.body.ActiveProctor;
         let playerId = req.params.id;
         let first_name = req.body.first_name;
         let last_name = req.body.last_name;
@@ -112,6 +113,21 @@ module.exports = {
             + "', `Proctor1fullname` = '" + Proctor1fullname + "', `Proctor1institution` = '" + Proctor1institution + "', `Proctor1email` = '" + Proctor1email + "', `Proctor1phone` = '" + Proctor1phone + "', `Proctor1Relationship` = '" + Proctor1Relationship
             + "', `Proctor2fullname` = '" + Proctor2fullname + "', `Proctor2institution` = '" + Proctor2institution + "', `Proctor2email` = '" + Proctor2email + "', `Proctor2phone` = '" + Proctor2phone + "', `Proctor2Relationship` = '" + Proctor2Relationship 
             + "' WHERE `Proctors`.`id` = '" + playerId + "'";
+        db.query(query, (err, result) => {
+            if (err) {
+                return res.status(500).send(err);
+            }
+            res.redirect('/');
+        });
+    },
+    updateStudent: (req, res) => {
+        var StudentCourse1=req.body.SCC1_input;
+        var StudentCourse2=req.body.SCC2_input;
+        var ActiveProctor = req.body.ActiveProctor;
+        let studentEmail = req.userContext.userinfo.preferred_username;
+        console.log(req.userContext.userinfo.preferred_username)
+        let query = "UPDATE `Proctors` SET  `StudentCourse1` = '" + StudentCourse1 + "', `StudentCourse2` = '" + StudentCourse2 + "', `ActiveProctor` = '" + ActiveProctor 
+            + "' WHERE `Proctors`.`studentEmail` = '" + studentEmail + "'";
         db.query(query, (err, result) => {
             if (err) {
                 return res.status(500).send(err);

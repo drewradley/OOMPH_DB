@@ -1,0 +1,18 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+       
+        <p>Hello World</p> 
+        <a class="btn btn-primary" href="/index" title="Admin access">Administrator</a>
+        <!-- <a class="btn btn-primary" href="/student" title="Student access">Student</a> -->
+
+        <!-- <a class="btn btn-primary" href="/logout-test" title="Logout">Logout</a> -->
+        <form method="get" action="/login">
+            <button type="submit">Log In</button>
+          </form>
+        <form method="post" action="/logout">
+            <button id="logout-button" type="submit">Logout</button>
+        </form>
+
+</div>
+</body>
+</html>
